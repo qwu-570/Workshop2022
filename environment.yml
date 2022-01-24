@@ -34,3 +34,4 @@ dependencies:
     - jupyter_contrib_nbextensions
     - mkdocs-jupyter
     - mkdocs-git-revision-date-localized-plugin
+    - pymdown-extensions
