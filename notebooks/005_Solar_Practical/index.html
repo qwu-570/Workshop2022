@@ -666,7 +666,7 @@ _=axs[-1].set_xlabel('day hour')
 </ul>
 <h2 id="weather-generation">Weather generation</h2>
 <p>To run our photosynthesis model, we need to know the temperature as well as the IPAR. That is rather complicated to model, so we will use observational data to drive the model. We choose the interpolated <a href="https://sites.uea.ac.uk/cru/data">CRU climate dataset</a> for this. </p>
-<p>You can select this using the <a href="geog0133/cru.py"><code>getCRU()</code></a> function for a given latitude, longitude and year (2011 to 2019 inclusive here). This gives you access to <strong>monthly</strong> minimum and maximum temperatures, <code>f['tmn']</code> and <code>f['tmx']</code> respectively, as well as cloud cover percentage <code>f['cld']</code>. The dataset is for the land surface only. If you specify somewhere in the ocean, you will get an interpolated result.</p>
+<p>You can select this using the <a href="../python/cru.py"><code>getCRU()</code></a> function for a given latitude, longitude and year (2011 to 2019 inclusive here). This gives you access to <strong>monthly</strong> minimum and maximum temperatures, <code>f['tmn']</code> and <code>f['tmx']</code> respectively, as well as cloud cover percentage <code>f['cld']</code>. The dataset is for the land surface only. If you specify somewhere in the ocean, you will get an interpolated result.</p>
 <h3 id="scaling-ipar-by-cloud-cover">Scaling iPAR by cloud cover</h3>
 <p>We will use the cloud percentage to reduce iPAR, by setting a reduction factor by 1/3 (to a value of 2/3) on cloudy days (when <code>f['cld']</code> is 100) and 1 when there is no cloud.</p>
 <pre><code>scale = 1 - f['cld']/300
